@@ -18,19 +18,44 @@ const faqData = [
   },
 ];
 
-const accordianBody;
+const accordianBody = document.querySelector(".accordian_body");
 const faqs = [];
 
+function createFaq(id) {
+  let faq = document.createElement("div");
+  let faqHeader = document.createElement("div");
+  let question = document.createElement("h3");
+  let button = document.createElement("button");
+  let answer = document.createElement("p");
+  answer.className = "hidden";
+  button.className = "show_btn";
+  button.innerHTML = "+";
+  accordianBody.className = "accordian_body";
+  faq.className = "faq";
+  faqHeader.className = "faq_header";
+  accordianBody.appendChild(faq);
+  faq.appendChild(faqHeader);
+  faqHeader.appendChild(question);
+  question.innerHTML = faqData[id].question;
+  faqHeader.appendChild(button);
+  faq.appendChild(answer);
+  answer.innerHTML = faqData[id].answer;
+  button.addEventListener("click", showFaq);
+  function showFaq() {
+    answer.classList.toggle("hidden");
+    if (answer.classList.contains("hidden")) {
+      button.innerHTML = "+";
+    } else {
+      button.innerHTML = "-";
+    }
+  }
+}
+createFaq(0);
+createFaq(1);
+createFaq(2);
+
 function showFaq() {
-  
+  answer.classList.toggle("hidden");
 }
 
-function createFaq() {
-  
-}
-
-function btnStatusUpdate() {
-  
-}
-
-
+function btnStatusUpdate() {}
