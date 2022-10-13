@@ -6,6 +6,7 @@
 html,
 body {
     font-size: 10px;
+    background-color: #a3a3a3;
     font-family: 'lato', Arial, Helvetica, sans-serif;
 }
 body {
@@ -25,6 +26,14 @@ body {
 .container label {
     font-size: 25px;
     margin-bottom: 1rem;
+}
+button{
+    padding: 1rem 2rem;
+    border: none;
+    background-color: rgb(20, 176, 20);
+    color: rgb(230, 10, 10);
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 .container #dob {
     margin-bottom: 30px;
